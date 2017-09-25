@@ -1,4 +1,7 @@
 var React = require('react');
+var Terrain = require('react-icons/lib/md/terrain');
+var SnowFlake = require('react-icons/lib/ti/weather-snow');
+var Calendar =  require('react-icons/lib/fa/calendar');
 
 class SkiDayCount extends React.Component{
 	percentToDecimal(decimal) {
@@ -12,14 +15,17 @@ class SkiDayCount extends React.Component{
 			<div className="ski-day-count">
 				<div className="total-days">
 					<span>{this.props.total}</span>
+						<Calendar />
 					<span>days</span>
 				</div>
 				<div className="powder-days">
 					<span>{this.props.powder}</span>
+					 <SnowFlake />
 					<span>days</span>
 				</div>
 				<div className="backcountry-days">
 					<span>{this.props.backcountry}</span>
+						<Terrain />
 					<span>days</span>
 				</div>
 				<div>

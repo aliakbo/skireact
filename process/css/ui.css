@@ -1,0 +1,230 @@
+nav.menu {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 1em);
+  font-size: 4em;
+  padding: .5em;
+  display: flex;
+  justify-content: space-around;
+}
+nav.menu a {
+  color: #d3d5e3;
+}
+
+div.goal-progress {
+  width: 95%;
+  margin: 0 2.5%;
+  font-size: 2em;
+  position: absolute;
+  bottom: 5em;
+  display: flex;
+  font-family: verdana;
+  justify-content: space-between;
+  text-shadow: 2px 2px 10px #d3d5e3;
+}
+div.goal-progress progress {
+  flex-basis: 66%;
+  background-color: black;
+  height: .5em;
+  position: relative;
+  top: 17px;
+}
+div.goal-progress input {
+  background: none;
+  border: none;
+  position: relative;
+  width: 2em;
+  font-size: 1em;
+  padding: 0;
+  left: 9px;
+  outline: none;
+  text-shadow: 2px 2px 10px #d3d5e3;
+}
+div.goal-progress button {
+  font-size: .75em;
+  padding: .25em;
+  background-color: green;
+  color: white;
+}
+div.goal-progress button:disabled {
+  background-color: lightgrey;
+  color: #bababa;
+}
+
+progress::-webkit-progress-bar {
+  background-color: black;
+}
+
+progress::-webkit-progress-value {
+  background-color: #8a2a2d;
+}
+
+@-moz-document url-prefix() {
+  progress {
+    display: none;
+  }
+}
+div.ski-day-count {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3em;
+  height: calc(100% - 3em);
+}
+div.ski-day-count > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.ski-day-count > div.total-days {
+  flex-basis: 100%;
+  font-size: 2em;
+}
+div.ski-day-count > div.total-days span, div.ski-day-count > div.total-days svg {
+  height: 200px;
+}
+div.ski-day-count > div:not(.total-days) {
+  flex-basis: 50%;
+}
+div.ski-day-count > div span, div.ski-day-count > div svg {
+  background-color: white;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.ski-day-count > div span:first-child, div.ski-day-count > div svg:first-child {
+  border-radius: 25px 0 0 25px;
+  padding-left: 15px;
+}
+div.ski-day-count > div span:last-child, div.ski-day-count > div svg:last-child {
+  border-radius: 0 25px 25px 0;
+  font-size: .5em;
+  padding-right: 15px;
+}
+
+div.ski-day-list {
+  height: calc(100% - 13em);
+  overflow-y: scroll;
+}
+div.ski-day-list table {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: verdana, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+div.ski-day-list table caption {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #8f2e32;
+}
+div.ski-day-list table td {
+  padding: .2em;
+}
+div.ski-day-list table a {
+  margin: 15px;
+}
+
+div.show-errors {
+  width: 100%;
+}
+div.show-errors div {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  background-color: red;
+  color: white;
+  font-family: verdana, sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+div.show-errors div svg {
+  font-size: 2em;
+  position: relative;
+  top: 9px;
+  right: 9px;
+}
+
+form.add-day {
+  font-family: Verdana, sans-serif;
+  width: 70%;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  height: calc(100% - 12em);
+}
+form.add-day > label,
+form.add-day div {
+  margin: 1em 0;
+}
+form.add-day label {
+  font-size: 1.5em;
+  text-shadow: 3px 3px 10px #d3d5e3;
+  height: 10px;
+  font-weight: bold;
+}
+form.add-day input[type="text"],
+form.add-day input[type="date"] {
+  font-size: 1.5em;
+  padding: .25em;
+  border-radius: .2em;
+  outline: none;
+  min-height: 36px;
+}
+form.add-day input[type="checkbox"] {
+  transform: scale(2);
+  margin: 0;
+  padding: 0;
+  margin-right: 2em;
+}
+form.add-day div > label {
+  position: relative;
+  top: 2px;
+}
+form.add-day .autocomplete {
+  position: relative;
+}
+form.add-day .autocomplete input {
+  width: calc(100% - .75em);
+}
+form.add-day .autocomplete span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 2em;
+}
+form.add-day .autocomplete .suggestions {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: auto;
+  height: auto;
+  max-height: 200px;
+  background-color: white;
+  overflow-y: scroll;
+  z-index: 3;
+}
+form.add-day .autocomplete .suggestions p {
+  padding: 1em;
+  margin: 0;
+}
+form.add-day .autocomplete .suggestions p:hover {
+  background-color: yellow;
+}
+form.add-day .autocomplete .suggestions:empty {
+  display: none;
+}
+form.add-day button {
+  margin: auto;
+  width: 100%;
+  font-size: 2em;
+  background-color: #8a2a2d;
+  font-weight: bold;
+  color: #d3d5e3;
+  padding: 5px;
+}

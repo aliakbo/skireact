@@ -1,32 +1,25 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var { Switch, HashRouter, Route } = require('react-router-dom');
 
-var SkiDayList = require('./components/SkiDayList');
+var App = require('./components/App');
+var Whoops404 = require('./components/Whoops404');
+var History = require('history');
 
-window.React = React
+window.React = React;
+
 
 ReactDOM.render(
-	<SkiDayList days={
-		[
-			{
-				resort: "Squaw Valley",
-				date: new Date("1/2/2016"),
-				powder: true,
-				backcountry: false
-			},
-			{
-				resort: "Kirkwood",
-				date: new Date("3/28/2016"),
-				powder: false,
-				backcountry: false
-			},  
-			{
-				resort: "Mt. Tallac",
-				date: new Date("4/2/2016"),
-				powder: false,
-				backcountry: true
-			}
-		]
-	}/>,
+	//<SkiDayCount />,
+	<HashRouter>
+		<Switch>
+			<Route path="/" component={App}/>
+			<Route path="list-days/" component={App}>
+				<Route path=":filter" component={App}/>
+			</Route>
+			<Route path="add-day" component={App}/>
+			<Route path="*" component={Whoops404}/>
+		</Switch>
+	</HashRouter>,
 	document.getElementById('react-container')
 )

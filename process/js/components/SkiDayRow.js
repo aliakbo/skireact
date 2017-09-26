@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 var Terrain = require('react-icons/lib/md/terrain');
 var SnowFlake = require('react-icons/lib/ti/weather-snow');
@@ -9,8 +10,7 @@ class SkiDayRow extends React.Component{
 		return (
             <tr>
             <td>
-                {this.props.date.getMonth()+1}/{this.props.date.getDate()}/
-                {this.props.date.getFullYear()}
+                {this.props.date}
             </td>
             <td>
                 {this.props.resort}
@@ -25,5 +25,13 @@ class SkiDayRow extends React.Component{
         )
     }
 }
+
+SkiDayRow.propTypes = {
+	resort: PropTypes.string.isRequired,
+	date: PropTypes.string.isRequired,
+	powder: PropTypes.bool,
+	backcountry: PropTypes.bool
+}
+
 
 module.exports = SkiDayRow;

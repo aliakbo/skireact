@@ -1,4 +1,6 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
+
 var Terrain = require('react-icons/lib/md/terrain');
 var SnowFlake = require('react-icons/lib/ti/weather-snow');
 var Calendar =  require('react-icons/lib/fa/calendar');
@@ -40,5 +42,20 @@ class SkiDayCount extends React.Component{
 		)
 	}
 }
+
+SkiDayCount.defaultProps = {
+	total : 50, 
+	powder: 10,
+	backcountry: 15,
+	goal: 75
+}
+
+SkiDayCount.propTypes = {
+	total: PropTypes.number,
+	powder: PropTypes.number,
+	backcountry: PropTypes.number,
+	goal: PropTypes.number
+  }
+  
 
 module.exports = SkiDayCount;

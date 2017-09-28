@@ -5,19 +5,19 @@ var PropTypes = React.PropTypes;
 class Autocomplete extends React.Component {
 	
 	get value() {
-        console.log("get " + this.refs.resortResort.value)
-		return this.refs.resortResort.value
+        console.log("get " + this.refs.resort.value)
+		return this.refs.resort.value
 	}
 
 	set value(inputValue) {
-        console.log("set " + this.refs.resortResort.value)
-		this.refs.resortResort.value = inputValue
+        console.log("set " + this.refs.resort.value)
+		this.refs.resort.value = inputValue
 	}
 
 	render() {
 		return (
 			<div>
-				<input ref="resortResort"
+				<input ref="resort"
 					   type="text" 
 					   list="tahoe-resorts" />
 				<datalist id="tahoe-resorts">
@@ -33,8 +33,8 @@ class Autocomplete extends React.Component {
 class AddDayForm extends React.Component{
 
     constructor(props) {
-		super(props)
-        this.submit = this.submit.bind(this)
+		super(props);
+        this.submit = this.submit.bind(this);
 
         this.state = {
             tahoeResorts : [
@@ -54,7 +54,7 @@ class AddDayForm extends React.Component{
     }
     
 	submit(e) {
-		e.preventDefault()
+		e.preventDefault();
 
 		this.props.onNewDay({
 			resort: this.refs.resort.value,

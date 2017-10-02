@@ -10,4 +10,4 @@ const constants = {
 	CLEAR_SUGGESTIONS: "CLEAR_SUGGESTIONS"
 }
 
-export default constants
+module.exports = constants;
